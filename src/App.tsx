@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
+
+import BreweryCard from './components/breweryCard/BreweryCard';
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  return <BreweryCard />;
+};
 
-export default App
+export default App;
