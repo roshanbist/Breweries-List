@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import axios, { AxiosResponse } from 'axios';
+// import { CompanyDetails } from '../misc/type';
 
-// type FetchData<T> = {
-//   data: T[];
-//   loading: boolean;
-//   error: string;
-// };
-
-const useFetch = <T>(url: string) => {
+const useFetchDetail = <T>(url: string) => {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -31,4 +26,4 @@ const useFetch = <T>(url: string) => {
   return { data, loading, error };
 };
 
-export default useFetch;
+export default useFetchDetail;
