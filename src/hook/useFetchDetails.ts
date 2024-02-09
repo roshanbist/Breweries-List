@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
-import axios, { AxiosResponse } from 'axios';
-// import { CompanyDetails } from '../misc/type';
+import axios, { AxiosError, AxiosResponse } from 'axios';
 
 const useFetchDetail = <T>(url: string) => {
-  const [data, setData] = useState<{ [key: string]: T }>({});
+  const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response: AxiosResponse<{ [key: string]: T }> = await axios.get(
-          url
-        );
+        const response: AxiosResponse<T> = await axios.get(url);
         setData(response.data);
         setLoading(false);
-      } catch (error: any) {
-        setError(error.message || 'Error occured');
+      } catch (error: AxiosError) {
+        setError(error.message);
         setLoading(false);
       }
     };

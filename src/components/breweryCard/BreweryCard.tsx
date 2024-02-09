@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const BreweryCard = (): JSX.Element => {
   const url = 'https://api.openbrewerydb.org/v1/breweries';
 
-  const { data, loading, error } = useFetch<Company[]>(url);
+  const { data, loading, error } = useFetch<Company>(url);
 
   if (loading) {
     return <div>Loading...</div>;
