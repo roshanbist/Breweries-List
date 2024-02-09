@@ -8,3 +8,7 @@ export type Company = {
   street: string;
   website_url: string;
 };
+
+export type CompanyProp = {
+  companyData: Company;
+};

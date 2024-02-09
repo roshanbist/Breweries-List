@@ -13,8 +13,13 @@ const useFetchDetail = <T>(url: string) => {
         const response: AxiosResponse<T> = await axios.get(url);
         setData(response.data);
         setLoading(false);
-      } catch (error: AxiosError) {
-        setError(error.message);
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          const axiosError = error as AxiosError;
+          setError(axiosError.message);
+        } else {
+          setError('An error occured');
+        }
         setLoading(false);
       }
     };

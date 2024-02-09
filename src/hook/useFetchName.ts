@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from 'react';
-
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
-// type FetchData<T> = {
-//   data: T[];
-//   loading: boolean;
-//   error: string;
-// };
-
-const useFetch = <T>(url: string) => {
+const useFetchName = <T>(url: string) => {
   const [data, setData] = useState<T[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchName = async () => {
       try {
         const response: AxiosResponse<T[]> = await axios.get(url);
+        console.log('response data', response.data);
         setData(response.data);
         setLoading(false);
       } catch (error) {
@@ -24,16 +18,18 @@ const useFetch = <T>(url: string) => {
           const axiosError = error as AxiosError;
           setError(axiosError.message);
         } else {
-          setError('An error occurred');
+          setError('An error occured');
         }
         setLoading(false);
       }
     };
 
-    fetchData();
+    fetchName();
   }, [url]);
+
+  //   console.log('data fetch', data);
 
   return { data, loading, error };
 };
 
-export default useFetch;
+export default useFetchName;
