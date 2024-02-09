@@ -1,17 +1,15 @@
 import React from 'react';
 
 import { Link, useParams } from 'react-router-dom';
-import useFetch from '../hook/useFetch';
 import { Company } from '../misc/type';
+import useFetchDetail from '../hook/useFetchDetails';
 
 const CompanyDetail = () => {
   const { companyId } = useParams();
 
   const url = `https://api.openbrewerydb.org/v1/breweries/${companyId}`;
 
-  const { data, loading, error } = useFetch<Company>(url);
-
-  // const { name, state, city, address_1, street, website_url } = data && data;
+  const { data, loading, error } = useFetchDetail<Company>(url);
 
   if (loading) {
     return <div>Loading...</div>;

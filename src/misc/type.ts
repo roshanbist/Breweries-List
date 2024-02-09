@@ -8,13 +8,3 @@ export type Company = {
   street: string;
   website_url: string;
 };
-
-// export type Company = {
-//   data:Brewery[]
-// }
-
-// export type CompanyDetails = {
-//   name: string;
-//   city: string;
-//   country: string;
-// };
