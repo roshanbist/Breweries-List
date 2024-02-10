@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 
-import lodash from 'lodash';
-import { Navigate, useNavigate } from 'react-router-dom';
+// import lodash from 'lodash';
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
   const [inputSearch, setInputSearch] = useState('');
@@ -35,16 +35,16 @@ const Search = () => {
   };
 
   return (
-    <>
+    <div className='w-full'>
       <input
         type='search'
         value={inputSearch}
         placeholder='Search brewery company here'
         onChange={(e) => inputChangeHandler(e)}
         onKeyDown={searchQueryHandler}
+        className='w-full border-0 rounded-[25px] bg-white text-black h-12 px-5 py-4 outline-none'
       />
-      {/* <p>{query}</p> */}
-    </>
+    </div>
   );
 };
 
