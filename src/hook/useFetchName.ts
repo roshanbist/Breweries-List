@@ -10,7 +10,6 @@ const useFetchName = <T>(url: string) => {
     const fetchName = async () => {
       try {
         const response: AxiosResponse<T[]> = await axios.get(url);
-        console.log('response data', response.data);
         setData(response.data);
         setLoading(false);
       } catch (error) {
@@ -26,8 +25,6 @@ const useFetchName = <T>(url: string) => {
 
     fetchName();
   }, [url]);
-
-  //   console.log('data fetch', data);
 
   return { data, loading, error };
 };

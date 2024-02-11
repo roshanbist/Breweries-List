@@ -9,23 +9,10 @@ import Loader from '../components/loader/Loader';
 
 const SearchResult = () => {
   const { query } = useParams();
-  // console.log('name', query);
 
   const url = `https://api.openbrewerydb.org/v1/breweries?by_name=${query}`;
 
   const { data, loading, error } = useFetchName<Company>(url);
-
-  // console.log('data aayo', data);
-
-  // if (loading) {
-  //   // console.log('loading...');
-  //   return <div>loading....</div>;
-  // }
-
-  // if (error) {
-  //   // console.log(error);
-  //   return <div>{error}</div>;
-  // }
 
   return (
     <>
@@ -36,11 +23,17 @@ const SearchResult = () => {
             Search Result for "{query}"
           </h2>
           <div className='card-wrap gap-7 grid sm:grid-cols-2 lg:grid-cols-3 relative'>
-            {loading && <Loader />}
-            {error && error}
-            {data?.map((company) => (
-              <CompanyCard key={company.id} companyData={company} />
-            ))}
+            {loading ? (
+              <Loader />
+            ) : error ? (
+              <p className='text-lg font-medium text-red-600'>{error}</p>
+            ) : data && data.length > 0 ? (
+              data.map((company) => (
+                <CompanyCard key={company.id} companyData={company} />
+              ))
+            ) : (
+              <p className='text-lg font-medium'>No matching results found!</p>
+            )}
           </div>
         </div>
       </section>

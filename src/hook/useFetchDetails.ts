@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
 const useFetchDetail = <T>(url: string) => {

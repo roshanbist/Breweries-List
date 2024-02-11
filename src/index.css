@@ -19,11 +19,18 @@ body {
   background: #fff;
 }
 
-/* style for container */
 @layer components {
   .max-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+  }
+
+  .form-input {
+    @apply block w-full leading-5 h-[50px] py-3 px-4 outline-none border rounded-lg shadow-lg bg-white;
+  }
+
+  .form-error {
+    @apply block w-full text-[14px] leading-[18px] text-red-700 mt-2;
   }
 }

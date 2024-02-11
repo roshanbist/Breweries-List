@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Search from '../search/Search';
 
 const HomeBanner = () => {
@@ -11,7 +12,8 @@ const HomeBanner = () => {
             Welcome.
           </h1>
           <span className='block text-white tracking-wider text-lg mb-5'>
-            Just chill like Beer!
+            Just chill like{' '}
+            <span className='text-amber-500 uppercase'>Beer</span>!
           </span>
           <Search />
         </div>

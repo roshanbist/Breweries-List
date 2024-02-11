@@ -1,9 +1,9 @@
 import React from 'react';
-
-import { CompanyProp } from '../../misc/type';
 import { Link } from 'react-router-dom';
 
-const CompanyCard = (props: CompanyProp): JSX.Element => {
+import { CompanyProp } from '../../misc/type';
+
+const CompanyCard = (props: CompanyProp) => {
   return (
     <div className='bg-white rounded-xl p-5 shadow-xl border text-center'>
       <h3 className='text-lg mb block mb-3 font-medium border-b pb-3'>

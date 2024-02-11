@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import Search from '../components/search/Search';
 import HomeBanner from '../components/banner/HomeBanner';
 
 const Home = () => {

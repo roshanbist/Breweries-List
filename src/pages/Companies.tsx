@@ -18,11 +18,16 @@ const Companies = () => {
         <div className='max-container'>
           <h2 className='text-2xl font-medium mb-6'>Brewery Companies List</h2>
           <div className='card-wrap grid sm:grid-cols-2 lg:grid-cols-3 relative gap-7'>
-            {loading && <Loader />}
-            {error && error}
-            {data?.map((company) => (
-              <CompanyCard key={company.id} companyData={company} />
-            ))}
+            {loading ? (
+              <Loader />
+            ) : error ? (
+              <p className='text-lg font-medium text-red-600'>{error}</p>
+            ) : (
+              data &&
+              data.map((company) => (
+                <CompanyCard key={company.id} companyData={company} />
+              ))
+            )}
           </div>
         </div>
       </section>

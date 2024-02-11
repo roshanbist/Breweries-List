@@ -14,16 +14,6 @@ const CompanyDetail = () => {
 
   const { data, loading, error } = useFetchDetail<Company>(url);
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // if (error) {
-  //   return <div>Error: {error}</div>;
-  // }
-
-  // console.log('data', data);
-
   return (
     <>
       <Banner />
@@ -36,8 +26,8 @@ const CompanyDetail = () => {
             {loading && <Loader />}
             {error && error}
             {data && (
-              <div className='shadow-md bg-white rounded-xl border p-6 w-[640px] mx-auto'>
-                <div className='w-full h-[350px] overflow-hidden'>
+              <div className='shadow-md bg-white rounded-xl border p-6 max-w-[640px] mx-auto'>
+                <div className='w-full h-[300px] sm:h-[350px] overflow-hidden'>
                   <img
                     className='object-cover w-full h-full rounded-lg rounded-b-none'
                     src={BeerImage}

@@ -12,3 +12,10 @@ export type Company = {
 export type CompanyProp = {
   companyData: Company;
 };
+
+export type FormInputs = {
+  name: string;
+  email: string;
+  mobileNumber: string;
+  message: string;
+};
