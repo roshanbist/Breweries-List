@@ -41,4 +41,4 @@ It was great to develop this project, even though the features and layout seem s
 
 ## Deploy
 
-This App is deployed ---->
+This App is deployed ----> ([click here](https://brewerycompany.vercel.app/))
