@@ -26,4 +26,4 @@ The Breweries App is a web application developed using React and TypeScript. It 
 
 ## Deploy
 
-The application is deployed using vercel. Click here to check the demo [Demo](https://brewerycompany.vercel.app/))
+The application is deployed using vercel. Click here to check the application [Demo](https://brewerycompany.vercel.app/)
