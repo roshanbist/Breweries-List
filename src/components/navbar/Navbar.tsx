@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { navLinks } from '../../contants';
+import { navLinks } from '../../constants';
 
 const Navbar = () => {
   const location = useLocation();
